@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>五子棋</title>
+    <link rel="stylesheet" href="public/css/main.css">
+    <script src="public/js/jquery.min.js"></script>
+</head>
+<body>
+    <div id="container">
+        <canvas id="myCanvas" width="600" height="600"
+                style="border:1px solid #f58000;">
+            您的浏览器貌似不支持canvas
+        </canvas>
+        <div id="replay" >重新开始</div>
+    </div>
+    <img id="qipan" src="view/img/qipan.jpg" style="display: none"></img>
+    <audio id="myaudio" src="view/music/paly.mp3" hidden="true" ></audio>
+    <audio id="myaudio_replay" src="view/music/replay.mp3" hidden="true" ></audio>
+    <audio id="myaudio_win" src="view/music/win.mp3" hidden="true" ></audio>
+</body>
+<script src="public/js/main.js" ></script>
+</html>

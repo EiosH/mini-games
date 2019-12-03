@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>8.88</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		#time{
+			width: 140px;
+			height: 60px;
+			background-color: black;
+			position: absolute;
+			left: 600px;
+			top: 200px;
+		}
+		#time0{
+			float:left;
+			font-size:50px;
+			line-height: 60px;
+			color:red;
+			text-align: left;
+		}
+		#time1{
+			float:right;
+			font-size:50px;
+			line-height: 60px;
+			color:yellow;
+			text-align: center;
+		}
+		#btn{
+			width: 140px;
+			height:30px;
+			position: absolute;
+			left: 600px;
+			top: 280px;
+			+
+			color: green;
+		}
+		@-webkit-keyframes move {
+			from {color: black}
+			to{color: red}
+			from {transform: rotate(0deg);}
+			to{transform: rotate(720deg);}
+		}
+		@-webkit-keyframes rmove {
+			from {transform: rotate(0deg)}
+			to{transform: rotate(10deg)}
+		}
+		#btn1{
+			width: 140px;
+			height:140px;
+			position: absolute;
+			left: 600px;
+			top: 330px;
+			background-color: #225566;
+			font-size:30px;
+			color: red;
+			/*-webkit-animation: rmove 8s linear;*/
+		}
+		#btn1:hover{
+			-webkit-animation: move 8s linear;
+		}
+		#btn:hover {
+			-webkit-animation: rmove 0.22s linear 3;
+
+		}
+
+		
+	</style>
+</head>
+<body>
+	<h1>游戏说明：按到8.88秒你就赢了！</h1>
+	<div id="time">
+<div id="time0" >00:</div>
+<div id="time1">00</div>
+
+<br>
+<br>
+</div>
+<button id="btn">计时开始</button>
+<button id="btn1">停！！</button>
+</body>
+<script type="text/javascript">
+	var time0=document.getElementById("time0");
+	var time1=document.getElementById("time1");
+	var btn=document.getElementById("btn");
+	var x0=0;
+	var y0=0;
+	function addtime0(){
+        if(x0!=15){
+        	x0++;
+       		if (x0<9.99) {
+        	time0.innerHTML=x0+"&nbsp&nbsp:";
+        	}
+        	else{
+            time0.innerHTML=x0+":";
+        	}
+        }
+	    else{
+	    btn1.onclick();
+	    // clearInterval(timer);
+    	// clearInterval(timer1);
+	    }	
+	}
+	function addtime1(){
+		if(x0!=15){
+			if(y0!=99){
+       	    y0++;
+	    	time1.innerHTML=y0;
+	    	}else{
+	    	y0=0;
+	    	}
+	    }
+	    else{
+	    	time1.innerHTML="00";
+	    }
+        
+		
+	}
+
+	// function addtime1(){
+ //        y0++;
+	// }
+	// function addtime2(){
+ //        z0++;
+	// }
+    btn.onclick=function(){
+    	btn.disabled=true;
+    	x0=0;
+    	y0=0;
+    	time0.innerHTML="00:";
+    	time1.innerHTML="00";
+        timer=setInterval(function(){
+        	addtime0();
+        },1000)
+        timer1=setInterval(function(){
+        addtime1();
+        },10)
+    }
+    btn1.onclick=function(){
+    	btn.disabled=false;
+    	clearInterval(timer);
+    	clearInterval(timer1);
+        if(x0==8)
+        {
+        	if(y0-88>0){
+        		alert("高手！ 稍慢了"+(y0-88)*0.01+"秒");
+        	}
+        	else if(y0-88<0){
+        		alert("强！ 只快了"+(88-y0)*0.01+"秒");
+        	}
+        	else if(y0==88){
+        		alert("恭喜你赢了！!!");
+        	}
+        	else{
+        		alert("不错。");
+        	}
+        	
+        	
+        }
+        else{
+        	alert(""+x0+":"+y0+"再练练吧！");	
+        }
+    }
+
+</script>
+</html>

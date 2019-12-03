@@ -1,0 +1,26 @@
+*{
+    magin:0 0;
+    padding:0 0;
+}
+#container{
+    margin: 0 auto;
+    /*text-align: center;*/
+    display: flex;
+    /*justify-content: center;*/
+
+}
+#myCanvas{
+    margin: 2em auto ;
+}
+#replay{
+    position: fixed;
+    border: solid 2px burlywood;
+    line-height: 25px;
+    text-align: center;
+    font: 18px  Arial ;
+    color: #555;
+    left: 44.5%;
+    height: 25px;
+    width: 80px;
+    background-color: #fff;
+}

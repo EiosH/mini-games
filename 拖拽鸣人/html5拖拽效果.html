@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>html拖拽效果</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		#a{
+			width: 300px;
+			height: 300px;
+			background-color: pink;
+			float: left;
+		}
+		#b{
+			width: 300px;
+			height: 300px;
+			background-color: red;
+			background-color: yellow;
+			margin: 0 auto 0 auto;
+			float: right;
+		}
+
+	</style>
+</head>
+<body>
+<div id="a"><img id="d" src="1100260.png"></div>
+<div id="b"><img id="c" ></div>
+</body>
+<script type="text/javascript">
+	var a=document.getElementById("a");             //原生Dom操作方法
+	var b=document.getElementById("b");
+	var b_img=document.getElementById("c");
+	var a_img=document.getElementById("d");
+	// a.addEventListener("dragenter",Myenter1);
+	a.addEventListener("dragover",Myover1);
+	a.addEventListener("drop",Mydrop1);
+	// a.addEventListener("dragleave",Myleave1);
+	b.addEventListener("dragenter",Myenter);
+	b.addEventListener("dragover",Myover);
+	b.addEventListener("drop",Mydrop);
+	b.addEventListener("dragleave",Myleave);
+	// function Myenter1(){
+ //        console.log("1");
+	// }
+	function Myover1(event){
+	    event.preventDefault();
+	}
+	function Mydrop1(event){
+		b_img.src="";
+		a_img.src="1100260.png";
+
+	}
+	function Myenter(){
+        console.log("1");
+	}
+	function Myover(event){
+	    event.preventDefault();
+        console.log("2");
+	}
+	function Mydrop(event){
+		console.log("3");
+		b_img.src="1100260.png";
+		a_img.src="";
+
+	}
+	function Myleave(){
+        console.log("4");
+	}
+
+
+
+ //    var b_img=document.getElementById("c");              //HTML5操作方法
+ //    var a_img=document.getElementById("d");         
+	// var a=document.getElementById("a");      
+ //    var b=document.getElementById("b");             
+ //    b.addEventListener("dragStart",MyStart);            
+ //    b.addEventListener("dragenter",Myenter);           
+	// b.addEventListener("dragover",Myover);
+	// b.addEventListener("drop",Mydrop);
+	// b.addEventListener("dragleave",Myleave);
+	// function MyStart(event){
+	// 	var mydata=b_img.src;
+	// 	var trans=event.dataTransfer;
+	// 	trans.setData("text",mydata);
+
+	// }
+	// function Myenter(){
+ //        //      console.log("1");
+	// }
+	// function Myover(event){
+	//   event.preventDefault();
+ //     //    console.log("2");
+	// }
+	// function Mydrop(event){
+	// 	var tran=event.dataTransfer;
+	// 	var mysrc=tran.getData("text");
+	// 	b.innerHTML="<img src='"+mysrc+"''>";
+	// 	a_img.src="";
+
+	// }
+	// function Myleave(){
+
+	// }
+       
+</script>
+</html>
