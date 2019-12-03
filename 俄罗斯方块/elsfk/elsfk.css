@@ -1,0 +1,45 @@
+.playground{
+	width: 525px;
+	height: 550px;
+	margin: 90px  500px;
+	position: absolute;
+	background-image: url('00.jpg');
+}
+.playground img {
+	position: absolute;
+}
+.playground p {
+	font-size: 30px;
+	font-family: 'SimHei';
+	font-weight:bold;
+	color: #667799;
+	position: absolute;
+	left: 305px;
+	top:120px;
+}
+.playground p+p{
+	top: 176px;
+
+}
+.playground p+p+p{
+	top: 232px;
+
+}
+.playground p+p+p+p{
+	font-size: 15px;
+	left: 330px;
+	top:540px;
+
+	color: #6b997c;
+}
+.playground p+p+p+p+p{
+	left: 200px;
+	top:180px;
+}
+.play{
+	width: 1520px;
+	height: 748px;
+	margin: 0 auto 0 auto;
+	position: relative;
+	background-image: url('000.jpg');
+}
